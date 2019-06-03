@@ -1,0 +1,74 @@
+{% macro displayPost(blog_list) %}
+<div class="row">
+    {% if blog_list %}
+    {% for blog in blog_list %}
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{blog.title}}</div>
+            <div class="panel-body">{{blog.description}}
+                <blockquote class="blockquote mb-0">
+                    <h2></h2>
+                    <footer class="blockquote-footer"> Posted by {{blog.user.username}}</footer>
+                </blockquote>
+            </div>
+            <div class="panel-footer"><a href="{{url_for('main.new_comment',blog_id = category.id)}}"> Add a comment</a>
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+</div>
+{% endmacro %}
+
+
+
+{% macro displayFullPost(blog_list) %}
+<div class="row">
+    {% if blog_list %}
+    {% for blog in blog_list %}
+    <div class="col-md-6">
+        <div class="panel panel-danger">
+            <div class="panel-heading">{{blog.title}}</div>
+            <div class="panel-body">{{blog.description}}
+                <blockquote class="blockquote mb-0">
+                    <h2></h2>
+                    <footer class="blockquote-footer"> Posted by {{blog.user.username}}</footer>
+                </blockquote>
+            </div>
+            <div class="panel-footer"><a href="{{url_for('main.new_comment',blog_id = category.id)}}"> Add a comment</a>
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+</div>
+{% endmacro %}
+
+
+{% macro displayComment(comments) %}
+<ul>
+
+    {% if comments %}
+    {% for comment in comments %}
+    <div class="row text-center">
+        <a>
+            <p style="color: brown">{{ comment.description }}</p>
+        </a>
+        <small> posted by {{comment.user.username}}</small>
+    </div>
+    {% endfor %}
+    {% else %}
+
+    <h3>No comments</h3>
+    {%endif%}
+
+</ul>
+
+
+{% endmacro %}
