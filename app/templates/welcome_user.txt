@@ -1,0 +1,7 @@
+Hello {{user.username}}
+Welcome to My blogs by Mzambia.
+
+We have just seen you have signed up for our application and want to welcome!!.
+Please enjoy my blogs and fell free to also submit a post.
+
+Thanks!
