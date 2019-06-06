@@ -1,4 +1,3 @@
-
 from flask import render_template,request,redirect,url_for,abort
 from flask_login import login_required,current_user
 from ..models import User,Blog,Comment
@@ -32,7 +31,7 @@ def blog():
 
 @main.route('/blogs/<int:blog_id>',methods = ["GET","POST"])
 def view_blog(blog_id):
-    blog = Blog.query.filter_by(id=blog_id).first()
+    blog = Blog.query.filter_by(id=blog_id).first()  
     random = requests.get('http://quotes.stormconsultancy.co.uk/random.json').json()
 
     form = Commentform()
