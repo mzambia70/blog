@@ -44,8 +44,7 @@
                     </div>
                     <div class="panel-footer">
                         {% if current_user.is_authenticated%}
-                        <a href="{{url_for('main.view_blog',blog_id = blog.id)}}" class="btn">Read More <i
-                                class="fas fa-arrow-right"></i></a>                        
+                                                
                         <a href="{{url_for('main.delete',blog_id = blog.id)}}" class="btn">Delete <i
                                 class="fas fa-trash-alt"></i></a>
                         <a href="{{url_for('main.update_blog',blog_id = blog.id)}}" class="btn">Update <i
